@@ -32,7 +32,7 @@ class PersonalBackgroundDisplay extends Component{
         }
         let detail='';
         let loading=this.state.loading;
-        if(this.state.detail.data==='undefined'&&loading==true){
+        if(this.state.detail.data==='undefined'&&loading===true){
             detail=<Spinner/>
         }
         else{
