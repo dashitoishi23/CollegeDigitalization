@@ -2,7 +2,7 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 import setAuthToken from '../utils/setAuthToken'
 
-import { GET_ERRORS,SET_CURRENT_USER} from './types'
+import { GET_ERRORS,SET_CURRENT_USER, REG_USER} from './types'
 
 
 export const loginCust = (userData) => dispatch => {
@@ -22,6 +22,22 @@ export const loginCust = (userData) => dispatch => {
      })
  })
 };
+
+export const regUser = (regData) => dispatch =>{
+    axios.post('/api/faculty/regis',regData)
+    .then(res=>{
+        dispatch({
+            type: REG_USER,
+            payload: regData
+        })
+    })
+    .catch(err=>{
+        dispatch({
+            type: GET_ERRORS,
+            payload: err.response_data
+        })
+    })
+}
 
 export const setCurrentUser = decoded =>{
     return {

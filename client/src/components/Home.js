@@ -1,4 +1,5 @@
 import React,{Component} from 'react'
+import {Link} from 'react-router-dom'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { loginCust } from '../actions/authActions'
@@ -19,7 +20,7 @@ class Home extends Component{
         this.setState({[e.target.name]:e.target.value});
     }
 
-    componentWillReceiveProps(nextProps){
+    UNSAFE_componentWillReceiveProps(nextProps){
         if(nextProps.auth.isAuthenticated){
             this.props.history.push('/dashboard')
         }
@@ -72,7 +73,7 @@ class Home extends Component{
                 <div className="input-group">
                     <input type="submit" name="btn-login" value="Login" className="btn btn-primary btn-block m-t-3" />
                         <br/>
-                            <a href="register.php" style={{color: "blue",fontSize: 20+"px",float: "left"}}>New User? Register Here!</a>
+                    <b><Link to ='/reg'>Register Here!!!</Link></b>
                     </div>
                 </form>
                 </div>

@@ -29,7 +29,7 @@ export default ()=>{
                 <td style={{color: "#29166f", height: "38px"}} align="center">
                     <strong>
                         <span style={{fontSize: "16pt"}}>
-                            <em>Research Information Management System</em>
+                            <em>Faculty Management System</em>
                         </span>
                     </strong>
                 </td>
